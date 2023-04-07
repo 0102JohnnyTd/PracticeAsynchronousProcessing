@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    // ViewModelのインスタンスを生成
+    @StateObject var qiitaListViewModel = QiitaListViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        List(qiitaListViewModel.articlesList) {
+            Text($0.title)
         }
-        .padding()
+//        .onAppear()
     }
 }
 
