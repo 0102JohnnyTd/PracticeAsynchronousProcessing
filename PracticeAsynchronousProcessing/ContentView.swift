@@ -15,7 +15,8 @@ struct ContentView: View {
         List(qiitaListViewModel.articlesList) {
             Text($0.title)
         }
-//        .onAppear()
+        // 🍎onAppearはメソッドなのに()で実行しないのか？
+        .onAppear(perform: qiitaListViewModel.onAppear)
     }
 }
 
