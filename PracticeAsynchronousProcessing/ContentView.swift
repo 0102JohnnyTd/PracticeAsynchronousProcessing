@@ -15,7 +15,7 @@ struct ContentView: View {
         List(qiitaListViewModel.articlesList) {
             Text($0.title)
         }
-//        .onAppear()
+        .onAppear(perform: qiitaListViewModel.onAppear)
     }
 }
 
